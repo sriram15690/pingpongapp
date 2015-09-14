@@ -40,15 +40,8 @@ RSpec.describe Booking, type: :model do
     expect(second_booking).not_to be_valid
   end
   
-  context "Set end time should set end time based on duration " do 
     it "should set end time corectly based on Duration" do 
      booking = FactoryGirl.build(:valid_booking1)
       expect(booking.set_end_time).to eq(booking.start_time + booking.duration.minutes)
     end
-    
-    it "should raise error when duration is not a number" do 
-     booking = FactoryGirl.build(:invalid_booking__duration)
-      expect {booking.set_end_time}.not_to raise_error
-    end
-  end
 end
