@@ -1,0 +1,31 @@
+<%= form_for(@booking) do |f| %>
+<div class="form-group">
+	<div class="form-group">
+		<label>Table Number</label>
+		<br/>
+		<%= f.text_field :table_id, value: 1, :readonly => true %>
+	</div>
+	<div class="form-group">
+		<label>Start Time (DD/MM/YYYY HH:MM)</label>
+		<br/>
+		<%= f.text_field :start_time, :required => true, :class => "hasTimepicker" %>
+	</div>
+	<div class="form-group">
+		<label>Duration (in Minutes)</label>
+		<br/>
+		<%= f.number_field :duration, min: 10,  max: 60, :required => true%>
+	</div>
+	<div class="actions">
+		<%= f.submit "Submit", class: "btn btn-primary" %>
+	</div>
+	<%end%>
+
+	<script>
+		$(document).ready(function() {
+			rome($(".hasTimepicker")[0], {
+				inputFormat : "DD/MM/YYYY HH:mm",
+				timeInterval : 60,
+				invalidate : true
+			});
+		});
+	</script>

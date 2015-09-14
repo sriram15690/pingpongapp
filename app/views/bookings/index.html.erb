@@ -1,1 +1,25 @@
-<p>Bookings Index </p>
+<h1>Bookings List</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Table Num</th>
+      <th>User</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.table.id %></td>
+        <td><%= booking.user.email %></td>
+        <td><%= booking.start_time.strftime("%m/%d/%Y %H:%M")%></td>
+        <td><%= booking.end_time.strftime("%m/%d/%Y %H:%M") %></td>
+        <td><%= booking.booking_duration%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
