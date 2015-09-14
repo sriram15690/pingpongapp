@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-<<<<<<< HEAD
+
   before_action :authenticate_user!, :except => [:index]
   def index
     #Getting all booking. Using Includes to reduce the number of Queries
@@ -33,13 +33,6 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:table_id, :start_time, :duration)
   end
-=======
-def index
-end
-def new
-end
 
-def create
-end
->>>>>>> e6916e4bdafc842a4a1df62ecbacf8d8d5d34669
+
 end
