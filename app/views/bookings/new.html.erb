@@ -1,4 +1,11 @@
 <%= form_for(@booking) do |f| %>
+<% if @booking.errors.any? %>
+<ul>
+  <% @booking.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
 <div class="form-group">
 	<div class="form-group">
 		<label>Table Number</label>
@@ -21,11 +28,13 @@
 	<%end%>
 
 	<script>
+		// creating  a Date time picker for Start Time.
 		$(document).ready(function() {
 			rome($(".hasTimepicker")[0], {
 				inputFormat : "DD/MM/YYYY HH:mm",
 				timeInterval : 60,
-				invalidate : true
+				invalidate : true,
+				min: new moment().format("DD/MM/YYYY HH:mm")
 			});
 		});
 	</script>

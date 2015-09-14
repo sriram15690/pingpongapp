@@ -84,3 +84,8 @@ table.rd-days {
 .rd-day-concealed {
 	visibility: hidden
 }
+
+.messages {
+	padding: 5px 0.5em;
+}
+

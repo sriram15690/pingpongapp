@@ -21,7 +21,7 @@
 					</div>
 					<div class="navbar-collapse collapse" id="navbar">
 						<ul class="nav navbar-nav">
-							<li class="active">
+							<li>
 								<a href="/">Home</a>
 							</li>
 							<li>
@@ -48,7 +48,11 @@
 					</div><!--/.nav-collapse -->
 				</div><!--/.container-fluid -->
 			</nav>
-			
+			<% flash.each do |key, value| %>
+			<p  class="messages bg-<%= key %>">
+				<%= value %>
+			</p>
+			<% end %>
 			<%= yield %>
 		</div>
 	</body>

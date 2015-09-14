@@ -14,10 +14,16 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     respond_to do |format|
-      if @booking.save!
-        format.html { redirect_to bookings_path, notice: 'Booking was successfully created.' }
+      if @booking.save
+        format.html do
+           redirect_to bookings_path
+           flash[:success] = 'Booking was successfully created.' 
+         end
       else
-        format.html { render :new }
+        format.html do
+          render :new 
+        end  
+         
       end
     end
   end

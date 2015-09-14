@@ -15,8 +15,8 @@
       <tr>
         <td><%= booking.table.id %></td>
         <td><%= booking.user.email %></td>
-        <td><%= booking.start_time.strftime("%m/%d/%Y %H:%M")%></td>
-        <td><%= booking.end_time.strftime("%m/%d/%Y %H:%M") %></td>
+        <td><%= booking.start_time.strftime("%d/%m/%Y %H:%M")%></td>
+        <td><%= booking.end_time.strftime("%d/%m/%Y %H:%M") %></td>
         <td><%= booking.booking_duration%></td>
       </tr>
     <% end %>
