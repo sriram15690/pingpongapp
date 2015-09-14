@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+ User.create(name: 'Sriram', email: "sriram1@gmail.com", password: "12345678")
+ Table.create(number: 1)
+ Booking.create(user_id: User.first.id, table_id: Table.first.id, start_time: Time.now,end_time: (Time.now + 30.minutes) )

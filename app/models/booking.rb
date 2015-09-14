@@ -38,3 +38,4 @@ class Booking < ActiveRecord::Base
 
   end
 end
+

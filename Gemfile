@@ -53,4 +53,4 @@ gem 'factory_girl'
 gem "twitter-bootstrap-rails"
 gem 'database_cleaner'
 gem 'simplecov', :require => false, :group => :test
-
+gem 'devise'
