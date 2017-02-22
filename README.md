@@ -5,3 +5,4 @@ Ruby on Rails App for booking a Ping Pong Table
 Ruby on Rails 4
 jQuery
 Twitter Bootstrap
+RWD
